@@ -12,6 +12,10 @@ interface GameBoardProps {
   dispatch: Dispatch<GameAction>;
 }
 
+const passengerPortraits: Record<string, string> = {
+  shen_mian: "/assets/characters/char_shenmian_memory.png",
+};
+
 export function GameBoard({ state, dispatch }: GameBoardProps) {
   if (state.phase === "intro") {
     return <IntroScreen dispatch={dispatch} />;
@@ -128,7 +132,13 @@ function PassengerPanel({ state }: { state: RunState }) {
       <h2>乘客关系</h2>
       {Object.values(state.passengers).map((passenger) => (
         <article className="passenger-card" key={passenger.id}>
-          <div className="portrait-placeholder">{passenger.name.slice(0, 1)}</div>
+          <div className="portrait-placeholder">
+            {passengerPortraits[passenger.id] ? (
+              <img alt={passenger.name} src={passengerPortraits[passenger.id]} />
+            ) : (
+              passenger.name.slice(0, 1)
+            )}
+          </div>
           <div>
             <strong>{passenger.name}</strong>
             <p>{passenger.description}</p>

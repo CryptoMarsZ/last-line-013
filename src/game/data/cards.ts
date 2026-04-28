@@ -92,6 +92,20 @@ export const cards: Record<string, Card> = {
       { type: "gainItem", itemId: "old_ticket" },
     ],
   },
+  brokenPhone: {
+    id: "brokenPhone",
+    name: "破碎手机",
+    type: "item",
+    cost: 1,
+    description: "推进 2 点目标，抽 1 张牌。",
+    flavor: "裂开的屏幕里，车厢灯光还在闪。",
+    tags: ["memory", "investigate"],
+    effects: [
+      { type: "advance", amount: 2 },
+      { type: "draw", amount: 1 },
+      { type: "gainItem", itemId: "broken_phone" },
+    ],
+  },
   askDaughter: {
     id: "askDaughter",
     name: "问起女儿",
@@ -152,5 +166,6 @@ export const startingDeck = [
   "lie",
   "deflect",
   "oldTicket",
+  "brokenPhone",
   "askDaughter",
 ];

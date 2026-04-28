@@ -9,16 +9,23 @@ interface EventPanelProps {
   dispatch: Dispatch<GameAction>;
 }
 
+const eventArt: Record<string, string> = {
+  emptyCarriage: "/assets/backgrounds/bg_empty_carriage.png",
+  facelessConductor: "/assets/events/event_faceless_ticket_inspector.png",
+};
+
 export function EventPanel({ state, dispatch }: EventPanelProps) {
   const station = stations[state.currentStationId];
   const event = events[station.eventIds[state.currentEventIndex]];
   const isResolved = isCurrentEventResolved(state);
   const resolvedEvent = state.resolvedEvents.find((entry) => entry.eventId === event.id);
   const progress = Math.round((state.currentObjective / event.objectiveValue) * 100);
+  const artSrc = eventArt[event.id] ?? "/assets/backgrounds/bg_empty_carriage.png";
 
   return (
     <section className="event-panel">
-      <div className="event-illustration" aria-hidden="true">
+      <div className="event-illustration has-art" aria-hidden="true">
+        <img alt="" className="event-art-image" src={artSrc} />
         <div className="carriage-perspective" />
         <div className="conductor-silhouette" />
         <div className="old-man-silhouette" />

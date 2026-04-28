@@ -15,6 +15,10 @@ const typeLabels: Record<Card["type"], string> = {
   negative: "负面",
 };
 
+const cardArt: Record<string, string> = {
+  brokenPhone: "/assets/cards/card_item_broken_phone.png",
+};
+
 export function CardView({ cardId, disabled, onPlay }: CardViewProps) {
   const card = cards[cardId];
 
@@ -31,7 +35,11 @@ export function CardView({ cardId, disabled, onPlay }: CardViewProps) {
     >
       <span className="card-cost">{card.cost}</span>
       <span className="card-art">
-        <span className="card-art-symbol">{card.tags[0]}</span>
+        {cardArt[card.id] ? (
+          <img alt="" className="card-art-image" src={cardArt[card.id]} />
+        ) : (
+          <span className="card-art-symbol">{card.tags[0]}</span>
+        )}
       </span>
       <span className="card-title-row">
         <strong>{card.name}</strong>

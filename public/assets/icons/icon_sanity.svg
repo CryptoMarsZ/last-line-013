@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sanity">
+  <defs>
+    <linearGradient id="sanityGlow" x1="16" y1="8" x2="48" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d8fbff"/>
+      <stop offset="1" stop-color="#5aa7b8"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 7c-9.4 0-17 7.2-17 16.2 0 5.1 2.4 9.7 6.2 12.7v5.7c0 2.1 1.7 3.8 3.8 3.8h14c2.1 0 3.8-1.7 3.8-3.8v-5.7A16 16 0 0 0 49 23.2C49 14.2 41.4 7 32 7Z" fill="#0b1a21" stroke="url(#sanityGlow)" stroke-width="3"/>
+  <path d="M24 24c1.2-2.4 3.7-4 6.5-4 4.1 0 7.5 3.3 7.5 7.4 0 3.2-2 5.9-4.9 7v4.1" fill="none" stroke="#d8fbff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M29 49h6M28 55h8" stroke="#7fd2df" stroke-width="3" stroke-linecap="round"/>
+</svg>

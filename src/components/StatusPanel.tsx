@@ -11,6 +11,7 @@ const evidenceNames: Record<string, string> = {
 const itemNames: Record<string, string> = {
   old_ticket: "旧车票",
   old_ticket_clue: "旧车票线索",
+  broken_phone: "破碎手机",
 };
 
 export function StatusPanel({ state }: StatusPanelProps) {
@@ -20,12 +21,15 @@ export function StatusPanel({ state }: StatusPanelProps) {
   return (
     <aside className="status-panel">
       <h2>你的状态</h2>
-      <Resource label="理智" icon="脑" value={sanityValue} tone="sanity" />
-      <Resource label="压力" icon="压" value={pressureValue} tone="pressure" />
+      <Resource label="理智" icon="/assets/icons/icon_sanity.svg" value={sanityValue} tone="sanity" />
+      <Resource label="压力" icon="/assets/icons/icon_pressure.svg" value={pressureValue} tone="pressure" />
 
       <div className="evidence-meter">
         <div className="evidence-header">
-          <span>证据</span>
+          <span className="label-with-icon">
+            <img alt="" src="/assets/icons/icon_evidence.svg" />
+            证据
+          </span>
           <strong>{state.evidence.length} / 6</strong>
         </div>
         <div className="evidence-dots">
@@ -78,7 +82,9 @@ function Resource({
 }) {
   return (
     <div className={`resource resource-${tone}`}>
-      <div className="resource-icon">{icon}</div>
+      <div className="resource-icon">
+        <img alt="" src={icon} />
+      </div>
       <div className="resource-body">
         <div className="resource-title">
           <span>{label}</span>

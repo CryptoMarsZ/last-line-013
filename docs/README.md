@@ -7,6 +7,8 @@
 - `game-design-summary.md`：游戏概念、主题、世界观、角色、章节和结局总览。
 - `core-systems.md`：核心玩法循环、资源系统、失败方式、卡牌类型和事件模型。
 - `mvp-scope.md`：MVP 内容范围、站点规划、结局判定、系统优先级和推荐数据结构。
+- `progression-and-endings.md`：单局时长、正式版流程、结局数量、结局触发条件和判定维度。
+- `card-list-mvp.md`：MVP 卡牌总表，包含卡牌 id、效果、叙事定位、美术文件名和实现状态。
 - `art-assets.md`：美术风格、素材清单、命名规范、MVP 美术优先级和 AI 生成图提示词模板。
 
 ## 阅读顺序
@@ -16,7 +18,9 @@
 1. `game-design-summary.md`
 2. `core-systems.md`
 3. `mvp-scope.md`
-4. `art-assets.md`
+4. `progression-and-endings.md`
+5. `card-list-mvp.md`
+6. `art-assets.md`
 
 ## 核心设计句
 
